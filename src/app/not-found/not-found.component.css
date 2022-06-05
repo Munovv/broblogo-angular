@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #22da26;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: .7;
+}
+
+img {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  max-width: 960px;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.terminalWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  line-height: 1.6;
+}
+
+.overlay {
+  position: fixed;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 6px);
+  animation: backgroundScroll 1s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes anim404 {
+  0% {
+      background-color: rgba(34, 218, 38, 0);
+      transform: translateY(0) rotate(0.02deg);
+  }
+
+  70% {
+      background-color: rgba(34, 218, 38, 0.2);
+  }
+
+  100% {
+      background-color: rgba(34, 218, 38, 0);
+      transform: translateY(6px) rotate(0.02deg);
+  }
+}
+
+@keyframes backgroundScroll {
+  from {
+      transform: translateY(0) rotate(0.02deg);
+  }
+
+  to {
+      transform: translateY(6px) rotate(0.02deg);
+  }
+}
+
+.terminal div {
+  animation: terminal .7s linear both;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c1 {
+  animation-delay: .5s !important;
+}
+
+.c2 {
+  animation-delay: 1.5s !important;
+}
+
+.c3 {
+  animation-delay: 2.2s !important;
+}
+
+.c4 {
+  animation-delay: 2.9s !important;
+}
+
+.c5 {
+  animation-delay: 3.6s !important;
+}
+
+.c6 {
+  animation-delay: 4.3s !important;
+}
+
+.c7 {
+  animation-delay: 5s !important;
+}
+
+.c8 {
+  animation-delay: 5.7s !important;
+}
+
+.c9 {
+  animation-delay: 6.4s !important;
+}
+
+.text-danger {
+  color: rgb(255, 108, 108);
+}
+
+.text-light {
+  color: #eeeeee;
+}
+
+@keyframes terminal {
+  0% {
+      width: 0;
+  }
+
+  100% {
+      width: 100%;
+  }
+}
+
+.c8 span {
+  animation: blink .5s alternate infinite linear;
+  animation-delay: 6.3s;
+  opacity: 0;
+}
+
+.c9 a {
+  animation: blink 1.5s alternate infinite linear;
+  animation-delay: 6.3s;
+  opacity: 0;
+}
+
+.back {
+  display: none;
+}
+
+@keyframes blink {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 100;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+      margin: 0 5%;
+  }
+
+  .terminal {
+      display: none;
+  }
+
+  .back {
+      display: block;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  img {
+      max-width: 760px;
+  }
+}

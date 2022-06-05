@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&family=Press+Start+2P&family=VT323&display=swap');
+
+body {
+    font-family: 'Press Start 2P', monospace;
+}
+
+.base {
+    background-color: #2f2e37;
+    color: #8722da;
+    /* green text shadow as glow? */
+    /* font-family: 'JetBrains Mono', monospace; */
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    /* font-family: 'VT323', monospace; */
+    padding-top: 10vh;
+  }
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #513483;
+    text-decoration: none;
+}
