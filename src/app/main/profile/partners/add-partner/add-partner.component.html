@@ -1,0 +1,26 @@
+<h2>Add new partner</h2>
+<button class="nes-btn is-error" style="margin-top: 20px; margin-bottom:
+    20px;" [routerLink]="['/main/profile/partner/all']">
+    Back
+</button>
+
+<div class="dashboard">
+    <div class="nes-table-responsive">
+        <form (submit)="AddPartner()" method="POST" ngForm #AddPartnerForm ngNativeValidate>
+            <div class="nes-field" style="margin-top: 30px;">
+                <label for="name_field">Name</label>
+                <input [(ngModel)]="partner.name" [ngModelOptions]="{standalone: true}" type="text" id="name_field" class="nes-input" required>
+            </div>
+
+            <div class="nes-field" style="margin-top: 30px;">
+                <label for="name_field">Location</label>
+                <input [(ngModel)]="partner.location" [ngModelOptions]="{standalone: true}" type="text" id="name_field" class="nes-input" required>
+            </div>
+
+            <label for="textarea_field" style="margin-top: 30px;">Description</label>
+            <textarea [(ngModel)]="partner.description" [ngModelOptions]="{standalone: true}" id="textarea_field" class="nes-textarea" required></textarea>
+
+            <button class="nes-btn is-success" style="margin-top: 30px;">Continue</button>
+        </form>
+    </div>
+</div>

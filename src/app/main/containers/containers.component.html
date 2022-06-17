@@ -1,1 +1,53 @@
-<p>containers works!</p>
+<div class="header">
+    <div class="nes-container" *ngIf="!isBuild" style="margin: 20px;">
+        <h2>choose services for testing</h2>
+    </div>
+    <div class="nes-container" *ngIf="isBuild" style="margin: 20px;">
+        <h2>system creation boot...</h2>
+    </div>
+</div>
+
+<div class="containers" *ngIf="!isBuild">
+    <div class="container">
+        <p class="title">Blog service <strong>-</strong></p>
+        <label>
+            <input [(ngModel)]="blog" name="blog" type="checkbox" class="nes-checkbox " checked />
+            <span>Enable</span>
+        </label>
+    </div>
+    <div class="container">
+        <p class="title">Partner service <strong>-</strong></p>
+        <label>
+            <input [(ngModel)]="partner" name="partner" type="checkbox" class="nes-checkbox " checked [ngModelOptions]="{standalone: true}"/>
+            <span>Enable</span>
+        </label>
+    </div>
+    <div class="container">
+        <p class="title">Books service <strong>-</strong></p>
+        <label>
+            <input [(ngModel)]="book" name="books" type="checkbox" class="nes-checkbox " checked [ngModelOptions]="{standalone: true}"/>
+            <span>Enable</span>
+        </label>
+    </div>
+    <div class="container">
+        <p class="title">Card service <strong>-</strong></p>
+        <label>
+            <input [(ngModel)]="card" name="card" type="checkbox" class="nes-checkbox " checked [ngModelOptions]="{standalone: true}"/>
+            <span>Enable</span>
+        </label>
+    </div>
+</div>
+
+<div class="load" *ngIf="isBuild">
+    <div class="indicator">
+        <progress class="nes-progress is-success" value="{{ this.indicator }}" max="100">
+            {{ this.indicator }} / 100%
+        </progress>
+    </div>
+</div>
+
+
+<div class="complete" *ngIf="!isBuild">
+    <button (click)="build()" class="nes-btn is-success">BUILD</button>
+    <button (click)="Logout()" class="nes-btn is-error" style="margin-left: 50px;">LOGOUT</button>
+</div>

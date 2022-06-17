@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Navigate } from '../app.navigate';
+import { Storage } from '../app.storage';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storage: Storage, private router: Navigate) { }
 
   ngOnInit(): void {
+    if (this.storage.GetProfile() === null) {
+      this.router.Location("/")
+    }
   }
 
 }

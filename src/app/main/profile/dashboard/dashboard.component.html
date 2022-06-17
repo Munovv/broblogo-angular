@@ -1,0 +1,18 @@
+<h2>Current system-session with broken services</h2>
+<div class="dashboard">
+    <div class="dashboard__item nes-container nes-container" *ngFor="let image of imagesBuild.data">
+        <div class="card">
+            {{ image.name }}
+            <a href="#" [routerLink]="['/main/profile/' + image.url + '/all']" class="nes-badge is-small" style="font-size:
+                15px; width: 50%;">
+                <span class="is-error">vulnerability!</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- <div class="dashboard__item dashboard__item--full">
+    <div class="card">
+        <img src="https://imgs.xkcd.com/comics/decline.png" alt=""
+            />
+    </div>
+</div> -->

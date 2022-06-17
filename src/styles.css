@@ -1,25 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&family=Press+Start+2P&family=VT323&display=swap');
+@import "nes.css/css/nes.css";
 
 body {
     font-family: 'Press Start 2P', monospace;
 }
 
 .base {
-    background-color: #2f2e37;
-    color: #8722da;
+    background-color: #fafafa;
+    color: #e76e55;
     /* green text shadow as glow? */
     /* font-family: 'JetBrains Mono', monospace; */
     font-family: 'Press Start 2P', monospace;
     font-size: 12px;
     /* font-family: 'VT323', monospace; */
-    padding-top: 10vh;
-  }
+}
+
+.swal2-popup {
+    font-size: 24px !important;
+    font-family: 'Press Start 2P', monospace;
+    background: rgb(229, 229, 229);
+    color: #222
+}
+
+.swal2-confirm {
+    font-family: 'Press Start 2P', monospace;
+}
 
 footer {
     background-color: #222;
     color: #fff;
-    font-size: 14px;
+    font-size: 32px;
     bottom: 0;
     position: fixed;
     left: 0;
@@ -32,11 +43,11 @@ footer p {
     margin: 10px 0;
 }
 
-footer i {
-    color: red;
+footer a {
+    color: #905043;
+    text-decoration: none;
 }
 
-footer a {
-    color: #513483;
-    text-decoration: none;
+footer a:hover, a:focus {
+    color: #f77d65;
 }

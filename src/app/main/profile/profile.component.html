@@ -1,0 +1,29 @@
+<div class="admin">
+    <header class="admin__header">
+        <a [routerLink]="['/main/profile/dashboard']" href="#" class="logo nes-btn is-error">
+            <h1>BROBLOGO</h1>
+        </a>
+        <div class="toolbar nes-container">
+            <div></div>
+            <a href="#" class="logout nes-btn is-error" (click)="Logout()">
+                Destroy system
+            </a>
+        </div>
+    </header>
+    <nav class="admin__nav nes-container" style="padding: 0 0">
+        <ul class="menu">
+            <li class="menu__item">
+                <a class="menu__link" href="#" [routerLink]="['/main/profile/dashboard']">Dashboard</a>
+            </li>
+            <li class="menu__item" *ngFor="let image of imagesBuild.data">
+                <a class="menu__link" href="#" [routerLink]="['/main/profile/' + image.url + '/all']">{{ image.name }}</a>
+            </li>
+        </ul>
+    </nav>
+    <main class="admin__main">
+        <router-outlet></router-outlet>
+        <p style="padding-top: 50px;">You can add new containers with
+            vulnerabilities by fork the <a
+                href="https://github.com/Munovv/broblogo">github repository</a>.</p>
+    </main>
+</div>

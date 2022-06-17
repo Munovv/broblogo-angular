@@ -1,0 +1,33 @@
+<h2>Selected partners from partner-service</h2>
+<button class="nes-btn is-success" style="margin-top: 20px; margin-bottom:
+    20px;" [routerLink]="['/main/profile/partner/add']">
+    Add new
+</button>
+
+<div class="dashboard">
+    <div class="nes-table-responsive">
+        <table class="nes-table is-bordered is-centered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let partner of partners; let i = index">
+                    <td>{{ partner.Id }}</td>
+                    <td>{{ partner.Name }}</td>
+                    <td>{{ partner.Location }}</td>
+                    <td>
+                        <button class="nes-btn is-success" style="margin-right:
+                            25px;" *ngIf="partner.Id !== ''">Show</button>
+                        <button (click)="DeletePartner(partner.Id, i)"
+                            class="nes-btn is-error" *ngIf="partner.Id !== ''">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

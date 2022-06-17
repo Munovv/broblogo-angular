@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Router } from "@angular/router"
+import { AuthModel } from '../app.models';
+import { AppHttpClient } from '../app.http';
+import { Navigate } from '../app.navigate';
+import { Storage } from '../app.storage';
 
 @Component({
   selector: 'app-auth',
@@ -9,20 +13,23 @@ import { Router } from "@angular/router"
 })
 export class AuthComponent implements OnInit {
 
-  authForm: any = {
-    username: '',
-    password: ''
-  }
+  public authForm: AuthModel = new (AuthModel)
 
-  constructor(private router: Router) { }
+  constructor(
+    private http: AppHttpClient,
+    private storage: Storage,
+    private router: Navigate
+  ) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('broblogoUser') !== null) {
-      this.location('/main')
+    if (this.storage.GetProfile() !== null) {
+      this.router.Location("/main/build")
     }
   }
 
-  location(url: string): void {
-    this.router.navigate([url]);
+  public authorize(): boolean {
+    this.http.AuthorizeRequest(this.authForm)
+
+    return false
   }
 }

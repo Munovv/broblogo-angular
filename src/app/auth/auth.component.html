@@ -7,10 +7,10 @@
       <h2 class="active"> Sign In </h2>
   
       <!-- Login Form -->
-      <form>
-        <input type="text"  class="fadeIn second" name="us" autocomplete="nope">
-        <input type="password" class="fadeIn third" name="pw" autocomplete="nope">
-        <input type="submit" class="fadeIn fourth" value="Continue">
+      <form (submit)="authorize()" method="POST" ngForm #AuthForm ngNativeValidate>
+        <input type="text"  class="fadeIn second" name="us" autocomplete="nope" required [(ngModel)]="authForm.username" placeholder="username">
+        <input type="password" class="fadeIn third" name="pw" autocomplete="nope" required [(ngModel)]="authForm.password" placeholder="password">
+        <input type="submit" class="fadeIn fourth" style="cursor: pointer" value="Continue">
       </form>
       
     </div>

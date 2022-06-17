@@ -1,0 +1,41 @@
+.header {
+    padding-top: 30px;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 50px;
+    color: #e76e55;
+}
+
+.complete {
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 100px;
+}
+
+.container {
+    color: #222;
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.indicator {
+    width: 80%;
+    padding-left: 20%;
+}
+
+.title {
+    color: #222;
+    font-size: 14px;
+}
+
+label {
+    padding-left: 20px;
+}
